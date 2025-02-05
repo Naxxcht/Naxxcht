@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Pusab&display=swap" rel="stylesheet">
+        <title>Geometry Dash</title>
+        <link rel="icon" type="image/x-icon" href="./images/coin.gif">
+        <style>
+            *{
+                text-decoration: none;
+            }
+            @font-face {
+                font-family: 'header';
+                src: url(./oxygene-1/OXYGENE1.TTF);
+            }
+            @font-face {
+                font-family: 'subfont';
+                src: url(./oxygene-1/PUSAB___.otf);
+            }
+            body{
+                background-image: url(./images/background-body.png);
+            }
+            header, body{
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+            header{
+                width: 100%;
+                padding: 100px 0;
+                background-image: url(./images/Geometry_Dash_Update_2_2_Sneak_Peek.gif);
+                border-bottom: 1.5px solid #000000;
+            }
+            .h-text{
+                position: relative;
+                text-align: center;
+            }
+            .h-text h1, .h-text p{
+                font-family: 'header';
+                text-shadow: 
+                    -1px -1px 0 rgb(255, 255, 255),  
+                    1px -1px 0 rgb(255, 255, 255),
+                    -1px  1px 0 rgb(255, 255, 255),
+                    1px  1px 0 rgb(255, 255, 255); /* Creates a stroke effect */
+                margin: 0;
+            }
+            .h-text h1{
+                font-size: 5em;
+                color: #00ff1e;
+                -webkit-text-stroke: 0.001px #000000;
+
+            }
+            .h-text p{
+                font-size: 3.5em;
+                color: #ff5e00;
+                -webkit-text-stroke: 1.5px #000000;
+            }
+            .nav{
+                width: auto;
+                padding: 15px 0;
+                background-color: #00ff1e;
+            }
+            .nav ul{
+                display: flex;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            li{
+                margin-left: 3rem;
+            }
+            a{
+                text-decoration: none;
+                cursor: pointer;
+                font-family: 'subfont';
+                font-size: 1em;
+                color: #ffffff;
+                -webkit-text-stroke: 1.5px #000000;
+            }
+            a:hover{
+                color: #fcb400;
+                font-size: 1.01em;
+            }
+            .nav, .about, .tips, .gif-meltdown img{
+                border: 3px solid #000000;
+                box-shadow: 
+                    -2px -2px 0 rgb(255, 255, 255),  
+                    2px -2px 0 rgb(255, 255, 255),
+                    -2px  2px 0 rgb(255, 255, 255),
+                    2px  2px 0 rgb(255, 255, 255);
+            }
+            .HERO-SECT{
+                display: flex;
+            }
+            .about, .tips{
+                background-color: #8e5332;
+                border-radius: 10px;
+                height: 600px;
+                margin-top: 2rem;
+            }
+            .about{
+                width: 30%;
+            }
+            .about img{
+                width: 70%;
+                max-width: 500px;
+                height: 300px;
+                display: block;
+                margin: 0 auto;
+                margin-top: 1rem;
+            }
+            .about-text, .tips-text{
+                font-family: "subfont";
+            }
+            .about-text h1, .about-text p, .tips-text h1, .tips-text p{
+                -webkit-text-stroke: 1.5px #000000;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+            .about-text h1, .tips-text h1{
+                color: #fcb400;
+                margin-top: 1rem;
+                font-size: 2em;
+            }
+            .about-text p, .tips-text p{
+                color:#ffffff;
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+            .tips{
+                width: 70%;
+                margin-left: 2rem;
+            }
+            .tips-text{
+                margin-left: 10rem;
+            }
+            .coin img{
+                width: 100px;
+                height: 100px;
+                margin-top: 4rem;
+                margin-left: 2rem;
+                position: absolute;
+            }
+            .gif-meltdown{
+                position: relative;
+            }
+            .gif-meltdown img{
+                display: block;
+                margin: 0 auto;
+                margin-top: 1.5rem;
+                width: 90%;
+                max-width: 1200px;
+                height: 330px;
+            }
+            @media (max-width:1024px){
+                .about img{
+                width: 70%;
+                height: 240px;
+                }
+                .gif-meltdown img{
+                height: 260px;
+                }
+                .about-text p{
+                    font-size: 1.2em;
+                    padding: 5px 15px;   
+                }    
+            }
+            @media (max-width:768px){
+                .h-text h1{
+                font-size: 4em;
+                }
+                .h-text p{
+                    font-size: 3em;
+                }
+                .about, .tips{
+                height: 500px;
+                }
+                .about{
+                    width: 35%;
+                }
+                .about img{
+                width: 70%;
+                height: 150px;
+                }
+                .about-text h1, .tips-text h1{
+                font-size: 1.5em;
+                }
+                .about-text p, .tips-text p{
+                    font-size: 1em;
+                    padding: 5px 10px;   
+                }
+                .gif-meltdown img{
+                height: 150px;
+                }        
+            }
+            @media (max-width:425px){
+                header{
+                    padding: 50px 0;
+                }
+                .h-text h1{
+                font-size: 2.5em;
+                }
+                .h-text p{
+                    font-size: 2em;
+                }
+                li{
+                margin-left: 2rem;
+                }
+                a{
+                    font-size: 0.9em;
+                }
+                .about{
+                    height: 400px;
+                    width: 95%;
+                    margin: 1rem auto;
+                }
+                .about img{
+                    width: 60%;
+                }
+                .tips{
+                    height: 600px;
+                    width: 95%;
+                    margin: 1rem auto;
+                }
+                .tips-text{
+                    margin-left: 5rem;
+                }
+                .HERO-SECT{
+                    flex-direction: column;
+                }
+                .coin img{
+                    width: 60px;
+                    height: 60px;
+                    margin-top: 4rem;
+                    margin-left: 1.3rem;
+                }
+                .gif-meltdown img{
+                margin-top: 1.5rem;
+                width: 90%;
+                height: 220px;
+                }
+            }
+            @media (max-width:375px){
+                header{
+                    padding: 50px 0;
+                }
+                .h-text h1{
+                font-size: 2em;
+                }
+                .h-text p{
+                    font-size: 1.5em;
+                }
+                li{
+                margin-left: 1.4rem;
+                }
+                a{
+                    font-size: 0.9em;
+                }
+                .tips-text{
+                    margin-left: 4rem;
+                }
+                .coin img{
+                    width: 50px;
+                    height: 50px;
+                    margin-top: 3.5rem;
+                    margin-left: 1rem;
+                }
+                .gif-meltdown img{
+                height: 190px;
+                }
+            }
+            @media (max-width:320px){
+                header{
+                    padding: 40px 0;
+                }
+                .h-text h1{
+                font-size: 1.8em;
+                }
+                .h-text p{
+                    font-size: 1.3em;
+                }
+                li{
+                margin-left: 1.1rem;
+                }
+                a{
+                    font-size: 0.8em;
+                }
+                .tips-text p{
+                    font-size: 0.95em;
+                }
+                .tips-text{
+                    margin-left: 3rem;
+                }
+                .coin img{
+                    width: 40px;
+                    height: 40px;
+                    margin-top: 3.5rem;
+                    margin-left: 1rem;
+                }
+                .gif-meltdown img{
+                height: 190px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <Header>
+            <div class="h-text">
+                <h1>GEOMERTY DASH</h1>
+                <p>MELTDOWN</p>
+            </div>
+        </Header>
+        <div class="nav">
+            <ul>
+                <li><a href="#link">HOME</a></li>
+                <li><a href="#link">LEVELS</a></li>
+                <li><a href="#link">COMMUNITY</a></li>
+                <li><a href="#link">GUIDES</a></li>
+            </ul>
+        </div>
+        <section class="HERO-SECT">
+            <div class="about">
+                <img src="./images/meltdown.png">
+                <div class="about-text">
+                    <h1>ABOUT</h1>
+                    <p>Geometry Dash Meltdown is a free ad-supported expansion app of Geometry Dash developed and published by RobTop Games and released on 19 December 2015 
+                        for Android and iOS. It features 3 exclusive levels, with limited achievements, icons and collectibles.</p>
+                </div>
+            </div>
+            <div class="tips">
+                <div class="coin">
+                    <img src="./images/coin.gif">
+                </div>
+                <div class="tips-text">
+                    <h1>TIPS</h1>
+                    <p>The game uses visual effects to create an exciting experience that matches its rhythmic gameplay. As you play through levels, 
+                        you'll see glowing elements that help guide you to the finish line, so it's important to pay attention to these platforms and obstacles.
+                        However, some flashy visuals can be distracting, so you need to focus on the important elements to avoid getting stressed and stay on track</span></p>
+                </div>
+                <div class="gif-meltdown">
+                    <img src="./images/geometry-dash-meltdown.gif">
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
